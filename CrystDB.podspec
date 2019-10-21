@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.source_files = 'CrystDB/*.{h,m}'
   s.public_header_files = 'CrystDB/*.{h}'
   s.dependency 'SQLCipher' 
-  s.dependency 'KeyChain-UDID', :git => 'git@github.com:matteocrippa/KeyChain-UDID.git'
+  s.dependency 'KeyChain-UDID'
     s.xcconfig = {
       'OTHER_SWIFT_FLAGS' => '$(inherited) -D SQLITE_HAS_CODEC -D GRDBCIPHER -D SQLITE_ENABLE_FTS5',
       'OTHER_CFLAGS' => '$(inherited) -DSQLITE_HAS_CODEC -DGRDBCIPHER -DSQLITE_ENABLE_FTS5',
