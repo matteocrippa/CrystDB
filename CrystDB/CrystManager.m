@@ -1061,6 +1061,24 @@ static NSMutableDictionary *_singletonDBDict = nil;
 }
 
 #pragma sqlite
+- (BOOL)__checkPassword:(NSString *)pwd {
+    sqlite3_stmt *stmt;
+    const char* key = [pwd UTF8String];
+    sqlite3_key(_db, key, (int)strlen(key));
+    if (sqlite3_exec(_db, (const char*) "SELECT count(*) FROM sqlite_master;", NULL, NULL, NULL) == SQLITE_OK) {
+        if(sqlite3_prepare_v2(_db, "PRAGMA cipher_version;", -1, &stmt, NULL) == SQLITE_OK) {
+            if(sqlite3_step(stmt)== SQLITE_ROW) {
+                const unsigned char *ver = sqlite3_column_text(stmt, 0);
+                if(ver != NULL) {
+                    return YES;
+                }
+            }
+            sqlite3_finalize(stmt);
+        }
+    }
+    return NO;
+}
+
 - (BOOL)__openWithPath:(NSString *)dbName{
     if (_db) return YES;
     
@@ -1071,10 +1089,8 @@ static NSMutableDictionary *_singletonDBDict = nil;
     
     int result = sqlite3_open(dbPath.UTF8String, &_db);
     if (result == SQLITE_OK) {
-        const char* key = [@"BIGSecret" UTF8String];
-        sqlite3_key(_db, key, (int)strlen(key));
-        
-        return YES;
+        BOOL result = [self __checkPassword:@"BIGSecret"];
+        return result;
     } else {
         _db = NULL;
         return NO;
