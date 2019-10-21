@@ -25,7 +25,7 @@
 #import "CrystManager.h"
 #import <objc/runtime.h>
 #import <CommonCrypto/CommonDigest.h>
-#import <YYQKeyChain.h>
+#import "CrystKeyChain.h"
 #if __has_include(<sqlite3.h>)
 #import <sqlite3.h>
 #else
@@ -1090,7 +1090,7 @@ static NSMutableDictionary *_singletonDBDict = nil;
     
     int result = sqlite3_open(dbPath.UTF8String, &_db);
     if (result == SQLITE_OK) {
-        NSString *uuid = [YYQKeyChain getUDIDWithUniqueKey:@"com.app.sqlite.chiper"];
+        NSString *uuid = [CrystKeyChain getUDIDWithUniqueKey:@"com.app.sqlite.chiper"];
         BOOL result = [self __checkPassword: uuid];
         return result;
     } else {
