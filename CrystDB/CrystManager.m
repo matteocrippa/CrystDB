@@ -1071,6 +1071,9 @@ static NSMutableDictionary *_singletonDBDict = nil;
     
     int result = sqlite3_open(dbPath.UTF8String, &_db);
     if (result == SQLITE_OK) {
+        const char* key = [@"BIGSecret" UTF8String];
+        sqlite3_key(db, key, (int)strlen(key));
+        
         return YES;
     } else {
         _db = NULL;
