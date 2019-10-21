@@ -32,7 +32,7 @@
 #endif
 
 #define kCrystDBPrefix @"Cryst"
-#define kDefaultCrystDBName @"cryst.db"
+#define kDefaultCrystDBName @"cryst-c.db"
 #define CSLog(...) printf("%s\n", [[NSString stringWithFormat:__VA_ARGS__] UTF8String])
 
 @interface CrystManager(){
