@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CrystDB'
-  s.version          = '0.0.1'
+  s.version          = '0.1.3'
   s.summary          = 'CrystDBCiper is a thread-safe Object Relational Mapping database that stores object based on SQLite Chiper.'
   s.description      = <<-DESC
   CrystDB has these features:
