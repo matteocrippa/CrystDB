@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'CrystDB/*.{h,m}'
   s.public_header_files = 'CrystDB/*.{h}'
-  s.libraries = 'sqlite3'
+  s.dependency = 'SQLCipher'
   s.frameworks = 'UIKit', 'CoreFoundation'
 
 end
