@@ -1,14 +1,12 @@
-CrystDB
+CrystDB Chiper
 ==============
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/Chasel-Shao/CrystDB/master/LICENSE)&nbsp;
 [![CocoaPods](http://img.shields.io/cocoapods/v/CrystDB.svg?style=flat)](http://cocoapods.org/pods/CrystDB)&nbsp;
 
-:book: English Documentation | [:book: 中文文档](README-CN.md)
-
 
 Introduce
 ==============
-CrystDB is a thread-safe and convenient Object Relational Mapping database that based on SQLite. It's lightweight and high-efficiency. When dealing with simple data object, it has processing speed especially in the aspect of the operation of query and storage. It's a fabulous alternative to Realm and Core Data.
+CrystDBChiper is a thread-safe and convenient Object Relational Mapping database that based on SQLite. It's lightweight and high-efficiency. When dealing with simple data object, it has processing speed especially in the aspect of the operation of query and storage. It's a fabulous alternative to Realm and Core Data.
 
 Features
 ==============
