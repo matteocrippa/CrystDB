@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB807B7A885D052C3B23AB3B /* libPods-CrystDB.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9226249F3EA7F20633AAA06D /* libPods-CrystDB.a */; };
+		D718C07123771F0B003BEF1B /* CrystKeyChain.h in Headers */ = {isa = PBXBuildFile; fileRef = D718C07023771F0B003BEF1B /* CrystKeyChain.h */; };
+		D718C07323771F13003BEF1B /* CrystKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = D718C07223771F13003BEF1B /* CrystKeyChain.m */; };
 		F321DF321F0B55FD008CEDFA /* CrystDBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F321DF311F0B55FD008CEDFA /* CrystDBTests.m */; };
 		F321DF341F0B55FD008CEDFA /* CrystDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3D114071F06152400FF82B8 /* CrystDB.framework */; };
 		F321DF3B1F0B5675008CEDFA /* UpdateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F321DF3A1F0B5675008CEDFA /* UpdateTest.m */; };
@@ -33,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6907837EB70151AA6BA1BFCA /* Pods-CrystDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrystDB.debug.xcconfig"; path = "Target Support Files/Pods-CrystDB/Pods-CrystDB.debug.xcconfig"; sourceTree = "<group>"; };
+		74E96CA9270607909EF1CF6A /* Pods-CrystDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CrystDB.release.xcconfig"; path = "Target Support Files/Pods-CrystDB/Pods-CrystDB.release.xcconfig"; sourceTree = "<group>"; };
+		9226249F3EA7F20633AAA06D /* libPods-CrystDB.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CrystDB.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D718C07023771F0B003BEF1B /* CrystKeyChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrystKeyChain.h; sourceTree = "<group>"; };
+		D718C07223771F13003BEF1B /* CrystKeyChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrystKeyChain.m; sourceTree = "<group>"; };
 		F321DF2F1F0B55FD008CEDFA /* CrystDBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CrystDBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F321DF311F0B55FD008CEDFA /* CrystDBTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrystDBTests.m; sourceTree = "<group>"; };
 		F321DF331F0B55FD008CEDFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,12 +75,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3D114231F0615E900FF82B8 /* libsqlite3.0.tbd in Frameworks */,
+				BB807B7A885D052C3B23AB3B /* libPods-CrystDB.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F8F1D87AF28B48778F1F8EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6907837EB70151AA6BA1BFCA /* Pods-CrystDB.debug.xcconfig */,
+				74E96CA9270607909EF1CF6A /* Pods-CrystDB.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F321DF301F0B55FD008CEDFA /* CrystDBTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +114,7 @@
 				F3D1141D1F06157700FF82B8 /* Supporting Files */,
 				F3D114081F06152400FF82B8 /* Products */,
 				F3D114211F0615E800FF82B8 /* Frameworks */,
+				7F8F1D87AF28B48778F1F8EA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				F3D114131F06154E00FF82B8 /* CrystDB.h */,
+				D718C07223771F13003BEF1B /* CrystKeyChain.m */,
+				D718C07023771F0B003BEF1B /* CrystKeyChain.h */,
 				F3D114141F06154E00FF82B8 /* CrystManager.h */,
 				F3D114151F06154E00FF82B8 /* CrystManager.m */,
 				F3D114161F06154E00FF82B8 /* NSObject+CrystDB.h */,
@@ -134,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				F3D114221F0615E900FF82B8 /* libsqlite3.0.tbd */,
+				9226249F3EA7F20633AAA06D /* libPods-CrystDB.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +169,7 @@
 			files = (
 				F3D114191F06154E00FF82B8 /* CrystManager.h in Headers */,
 				F3D114181F06154E00FF82B8 /* CrystDB.h in Headers */,
+				D718C07123771F0B003BEF1B /* CrystKeyChain.h in Headers */,
 				F3D1141B1F06154E00FF82B8 /* NSObject+CrystDB.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,6 +199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3D1140F1F06152400FF82B8 /* Build configuration list for PBXNativeTarget "CrystDB" */;
 			buildPhases = (
+				18D78994CC16249543B69D75 /* [CP] Check Pods Manifest.lock */,
 				F3D114021F06152400FF82B8 /* Sources */,
 				F3D114031F06152400FF82B8 /* Frameworks */,
 				F3D114041F06152400FF82B8 /* Headers */,
@@ -196,7 +220,7 @@
 		F3D113FE1F06152400FF82B8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = chasel;
 				TargetAttributes = {
 					F321DF2E1F0B55FD008CEDFA = {
@@ -216,6 +240,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = F3D113FD1F06152400FF82B8;
@@ -247,6 +272,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		18D78994CC16249543B69D75 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CrystDB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F321DF2B1F0B55FD008CEDFA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -264,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D718C07323771F13003BEF1B /* CrystKeyChain.m in Sources */,
 				F3D1141A1F06154E00FF82B8 /* CrystManager.m in Sources */,
 				F3D1141C1F06154E00FF82B8 /* NSObject+CrystDB.m in Sources */,
 			);
@@ -306,21 +357,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -358,21 +418,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -402,6 +471,7 @@
 		};
 		F3D114101F06152400FF82B8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6907837EB70151AA6BA1BFCA /* Pods-CrystDB.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
@@ -420,6 +490,7 @@
 		};
 		F3D114111F06152400FF82B8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74E96CA9270607909EF1CF6A /* Pods-CrystDB.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;

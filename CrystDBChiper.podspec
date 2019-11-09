@@ -12,19 +12,22 @@ Pod::Spec.new do |s|
                        DESC
   s.homepage         = 'https://github.com/matteocrippa/CrystDB.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Chasel-Shao' => '753080265@qq.com' }
+  s.author           = { 'Matteo Crippa' => '' }
   s.source           = { :git => 'https://github.com/matteocrippa/CrystDB.git', :tag => s.version.to_s }
   s.requires_arc = true 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'CrystDB/*.{h,m}'
   s.public_header_files = 'CrystDB/*.{h}'
+
   s.dependency 'SQLCipher' 
+
     s.xcconfig = {
       'OTHER_SWIFT_FLAGS' => '$(inherited) -D SQLITE_HAS_CODEC -D GRDBCIPHER -D SQLITE_ENABLE_FTS5',
       'OTHER_CFLAGS' => '$(inherited) -DSQLITE_HAS_CODEC -DGRDBCIPHER -DSQLITE_ENABLE_FTS5',
       'GCC_PREPROCESSOR_DEFINITIONS' => '$(inherited) SQLITE_HAS_CODEC=1 GRDBCIPHER=1 SQLITE_ENABLE_FTS5=1'
     }
+
   s.frameworks = 'UIKit', 'CoreFoundation', 'Security'
 
 end

@@ -23,14 +23,10 @@
 //
 
 #import "CrystManager.h"
+#import <SQLCipher/sqlite3.h>
 #import <objc/runtime.h>
 #import <CommonCrypto/CommonDigest.h>
 #import "CrystKeyChain.h"
-#if __has_include(<sqlite3.h>)
-#import <sqlite3.h>
-#else
-#import "sqlite3.h"
-#endif
 
 #define kCrystDBPrefix @"Cryst"
 #define kDefaultCrystDBName @"cryst-c.db"
