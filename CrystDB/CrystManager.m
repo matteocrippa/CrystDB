@@ -482,7 +482,7 @@ static NSMutableDictionary *_singletonDBDict = nil;
 - (BOOL)_checkTable:(Class)class OnKey:(NSString *)key{
     NSString *tableName = [self _tableNameWithClass:class];
     NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT name FROM sqlite_master WHERE type='table' AND name='%@';", tableName];
-    [self __executeUpdate:sql];
+    return [self __executeUpdate:sql];
 }
 
 - (BOOL)_createTable:(Class)class OnKey:(NSString *)key{
