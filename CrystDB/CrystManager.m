@@ -481,7 +481,7 @@ static NSMutableDictionary *_singletonDBDict = nil;
 #pragma mark -- private method
 - (BOOL)_checkTable:(Class)class {
     NSString *tableName = [self _tableNameWithClass:class];
-    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT name FROM sqlite_master WHERE type=table AND name='%@';", tableName];
+    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT class_name FROM cryst_sys_class WHERE table_name='%@';", tableName];
     sqlite3_stmt *stmt = [self __prepareStmt:sql];
     [self __nextWithError:nil withStatement:stmt];
     int col_nums = sqlite3_column_count(stmt);
