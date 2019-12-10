@@ -1,8 +1,8 @@
 
 Pod::Spec.new do |s|
-  s.name             = 'CrystDBChiper'
-  s.version          = '0.1.4'
-  s.summary          = 'CrystDBChiper is a thread-safe Object Relational Mapping database that stores object based on SQLite Chiper.'
+  s.name             = 'CrystDBCipher'
+  s.version          = '0.1.5'
+  s.summary          = 'CrystDBCipher is a thread-safe Object Relational Mapping database that stores object based on SQLite Chiper.'
   s.description      = <<-DESC
   CrystDB has these features:
     * It can automatically transform the property type of an object to storage sqlite type  for each object 

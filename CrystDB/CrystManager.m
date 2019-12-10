@@ -120,9 +120,11 @@ static NSMutableDictionary *_singletonDBDict = nil;
     if (primaryKey == nil) {
         NSAssert(0, @"the primary key doesn't exist");
     }else{
-        if(![self _createTable:[object class] OnKey:primaryKey]) return NO;
+        if(![self _checkTable:[object class] OnKey:primaryKey]) {
+            if(![self _createTable:[object class] OnKey:primaryKey]) return NO;
+        }
     }
-    __block BOOL result ;
+    __block BOOL result;
     dispatch_sync(_workQueue, ^{
         result =  [self _insertDataToTable:object isUpadate:YES];
     });
@@ -477,6 +479,12 @@ static NSMutableDictionary *_singletonDBDict = nil;
 }
 
 #pragma mark -- private method
+- (BOOL)_checkTable:(Class)class OnKey:(NSString *)key{
+    NSString *tableName = [self _tableNameWithClass:class];
+    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT name FROM sqlite_master WHERE type='table' AND name='%@';", tableName];
+    [self __executeUpdate:sql];
+}
+
 - (BOOL)_createTable:(Class)class OnKey:(NSString *)key{
     if (!_propAttrValueOfObjectArray) return NO;
     NSString *tableName = [self _tableNameWithClass:class];
