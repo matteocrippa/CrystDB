@@ -120,8 +120,8 @@ static NSMutableDictionary *_singletonDBDict = nil;
     if (primaryKey == nil) {
         NSAssert(0, @"the primary key doesn't exist");
     }else{
-        if(![self _checkTable:[object class]]) {
-            if(![self _createTable:[object class] OnKey:primaryKey]) return NO;
+        if(![self _createTable:[object class] OnKey:primaryKey]) {
+            return NO;
         }
     }
     __block BOOL result;
@@ -479,20 +479,13 @@ static NSMutableDictionary *_singletonDBDict = nil;
 }
 
 #pragma mark -- private method
-- (BOOL)_checkTable:(Class)class {
-    NSString *tableName = [self _tableNameWithClass:class];
-    NSMutableString *sql = [NSMutableString stringWithFormat:@"SELECT class_name FROM cryst_sys_class WHERE table_name='%@';", tableName];
-    sqlite3_stmt *stmt = [self __prepareStmt:sql];
-    [self __nextWithError:nil withStatement:stmt];
-    int col_nums = sqlite3_column_count(stmt);
-    return col_nums > 0;
-}
-
 - (BOOL)_createTable:(Class)class OnKey:(NSString *)key{
     if (!_propAttrValueOfObjectArray) return NO;
     NSString *tableName = [self _tableNameWithClass:class];
     NSMutableString *mutableSql = [NSMutableString stringWithFormat:@"create table if not exists '%@' (object_id text",tableName];
-    for (NSDictionary *dict in _propAttrValueOfObjectArray) {
+    
+    NSArray *_propCopy = [_propAttrValueOfObjectArray copy];
+    for (NSDictionary *dict in _propCopy) {
         [mutableSql appendFormat:@", %@ %@",dict[@"prop"],dict[@"attr"]];
     }
     [mutableSql appendString:[NSString stringWithFormat:@", modification_time integer,last_access_time integer,primary key(%@));",key]];
