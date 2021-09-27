@@ -1,7 +1,7 @@
 CrystDB Chiper
 ==============
 [![License MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://raw.githubusercontent.com/Chasel-Shao/CrystDB/master/LICENSE)&nbsp;
-[![CocoaPods](http://img.shields.io/cocoapods/v/CrystDB.svg?style=flat)](http://cocoapods.org/pods/CrystDB)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/v/CrystDBChiper.svg?style=flat)](http://cocoapods.org/pods/CrystDBChiper)&nbsp;
 
 
 Introduce
