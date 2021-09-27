@@ -900,7 +900,9 @@ static NSMutableDictionary *_singletonDBDict = nil;
         if (i == numIvars - 1) {
             [var_params_string appendFormat:@"%@",[NSString stringWithUTF8String:ivar_getTypeEncoding(thisIvar)]];
         }else{
-            [var_params_string appendFormat:@"%@,",[NSString stringWithUTF8String:ivar_getTypeEncoding(thisIvar)]];
+            if (ivar_getTypeEncoding(thisIvar) != nil) {
+                [var_params_string appendFormat:@"%@,",[NSString stringWithUTF8String:ivar_getTypeEncoding(thisIvar)]];
+            }
         }
     }
     free(vars);
