@@ -9,12 +9,12 @@ DEPENDENCIES:
   - SQLCipher (~> 4.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/CocoaPods/Specs:
     - SQLCipher
 
 SPEC CHECKSUMS:
   SQLCipher: 0187a2180ac288ea686b670b7141da62cd013b16
 
-PODFILE CHECKSUM: 5efad1b11e02ac262d8d3c2c0c02cce2289dfe80
+PODFILE CHECKSUM: e708a356341f2c2def39aaa856a91cd86f3f76c0
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3

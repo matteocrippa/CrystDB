@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'CrystDBCipher'
-  s.version          = '0.1.11'
+  s.version          = '0.1.12'
   s.summary          = 'CrystDBCipher is a thread-safe Object Relational Mapping database that stores object based on SQLite Chiper.'
   s.description      = <<-DESC
   CrystDB has these features:
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Matteo Crippa' => '' }
   s.source           = { :git => 'https://github.com/matteocrippa/CrystDB.git', :tag => s.version.to_s }
   s.requires_arc = true 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '12.0'
 
   s.source_files = 'CrystDB/*.{h,m}'
   s.public_header_files = 'CrystDB/*.{h}'
